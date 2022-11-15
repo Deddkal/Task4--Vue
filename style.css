@@ -1,0 +1,49 @@
+
+body{
+    background: url(./imagenes/internet-ge8676757e_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header{
+    background: #364258;
+    color: white;
+    
+}
+
+.navbar-nav a{
+    color: white;
+    font-size: 22px;
+}
+
+header img{
+    width: 18rem;
+}
+
+main{
+    min-height: 70vh;
+}
+
+footer{
+    background: #364258;
+    color: white;
+}
+
+footer img{
+    width: 5rem;
+}
+
+.searchBar{
+    width: 80%;
+}
+
+.conteiner_main{
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.card_conteiner{
+    width: 18rem;
+}

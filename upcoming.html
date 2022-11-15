@@ -20,10 +20,10 @@
               <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
+                    <a class="nav-link active" href="#">Upcoming Events</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./past.html">Past Events</a>
@@ -38,27 +38,27 @@
               </div>
             </div>
           </nav>
-          <h1 class="text-center p-3">Home</h1>
+          <h1 class="text-center p-3">Upcoming Events</h1>
     </header>
     <main>
         <div id="app">
             <!-- <form action="#"> -->
                 <fieldset class="d-flex justify-content-center flex-column gap-3 flex-wrap">
                     <div class="btn-group gap-3 d-flex justify-content-around flex-wrap" role="group" data-bs-toggle="buttons" >
-                        <template v-for="category in categoriasFiltradas">
+                        <template v-for="category in categoriasFiltradasComing">
                             <label class="btn btn_checked text-bg-dark active">
                                 <input type="checkbox" class="me-2" :value="category" v-model="checked"> {{category}}
                             </label>
                         </template>
                     </div>
                     <div class="mb-3 d-flex searchBar align-self-center">
-                        {{filtrar}}
-                        <input type="text" class="form-control" placeholder="buscar" v-model="inputBusqueda">
+                        {{filtrarComing}}
+                        <input type="text" class="form-control" placeholder="buscar" v-model="inputBusqueda" ><!-- @keyup="filtrarComing()" -->
                     </div>
                 </fieldset>
             <!-- </form> -->
             <div class="conteiner_main d-flex justify-content-between gap-4 flex-wrap g-col-4">
-                <div class="card border-white g-col-3 card_conteiner p-2 text-bg-dark" v-for="evento in eventosFiltrados">
+                <div class="card border-white g-col-3 card_conteiner p-2 text-bg-dark" v-for="evento in eventosFiltradosComing">
                     <img class="card-img-top" :src="evento.image" :alt="evento.name">
                     <div class="card-body">
                         <h4 class="card-title">{{evento.name}}</h4>
