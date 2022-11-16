@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing-Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./imagenes/logo-ae-grande.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>        
+    <div id="app">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid d-flex justify-content-around flex-wrap">
+                <div class="navbar-brand logo-"><img src="./imagenes/LogoAmazingEvents.png" alt="logo amazing events" class="logo-img"></div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./past.html">Past Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Stats</a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+            <h1 class="text-center p-3">Stats</h1>
+        </header>
+        <main class="d-flex justify-content-center my-5">
+                <table class="table table-dark table-striped text-center conteiner_table">
+                    <thead>
+                        <tr>
+                            <th colspan=3 class="fs-1">
+                                Event statistics
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="fs-4">Event with the highest percentage of attendance</th>
+                            <th class="fs-4">Event with the lowest percentage of attendance</th>
+                            <th class="fs-4">Event with larger capacity</th>	
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{eventoMayorPorcentaje[0]}}</td>
+                            <td>{{eventoMenorPorcentaje[0]}}</td>
+                            <td>{{eventoMayorCapacidad[0]}} </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th colspan=3 class="fs-1">Upcoming events statistics by category</th>
+                        </tr>
+                        <tr>
+                            <th class="fs-4">Category</th>
+                            <th class="fs-4">Revenues</th>
+                            <th class="fs-4">Percentage of attendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="evento in categoriaNuevoObjComing">
+                            <td>{{evento.nombre}}</td>
+                            <td>${{evento.revenues}} </td>
+                            <td>{{Math.round(evento.estimate*100/evento.capacity)}}% </td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th colspan=3 class="fs-1">Past events statistics by category</th>
+                        </tr>
+                        <tr>
+                            <th class="fs-4">Category</th>
+                            <th class="fs-4">Revenues</th>
+                            <th class="fs-4">Percentage of attendance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="evento in categoriaNuevoObjPast">
+                            <td>{{evento.nombre}}</td>
+                            <td>${{evento.revenues}} </td>
+                            <td>{{Math.round(evento.assistance*100/evento.capacity)}}% </td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            
+            
+        </main>
+        <footer>
+            <footer>
+                <div class="footer-conteiner d-flex flex-wrap justify-content-between p-4 align-items-baseline">
+                    <ul class="nav">
+                        <li class="nav-item">
+                        <a class="nav-link" href="https://es-la.facebook.com/"><img src="./imagenes/facebook.png" alt="logo facebook"></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/"><img src="./imagenes/instagram.png" alt="logo instagram"></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="https://www.whatsapp.com/?lang=es"><img src="./imagenes/whatsapp.png" alt="logo whatsapp"></a>
+                        </li>
+                    </ul>
+                    <h2 class="footer-title">Cohort 37-38</h2>
+                </div>   
+            </footer>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

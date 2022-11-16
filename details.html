@@ -23,7 +23,7 @@
                     <a class="nav-link" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">Upcoming Events</a>
+                    <a class="nav-link" href="./upcoming.html">Upcoming Events</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./past.html">Past Events</a>
@@ -38,39 +38,30 @@
               </div>
             </div>
           </nav>
-          <h1 class="text-center p-3">Upcoming Events</h1>
+          <h1 class="text-center p-3">Event Details</h1>
     </header>
     <main>
-        <div id="app">
-            <!-- <form action="#"> -->
-                <fieldset class="d-flex justify-content-center flex-column gap-3 flex-wrap">
-                    <div class="btn-group gap-3 d-flex justify-content-around flex-wrap" role="group" data-bs-toggle="buttons" >
-                        <template v-for="category in categoriasFiltradasComing">
-                            <label class="btn btn_checked text-bg-dark active">
-                                <input type="checkbox" class="me-2" :value="category" v-model="checked"> {{category}}
-                            </label>
-                        </template>
-                    </div>
-                    <div class="mb-3 d-flex searchBar align-self-center">
-                        {{filtrarComing}}
-                        <input type="text" class="form-control" placeholder="buscar" v-model="inputBusqueda" ><!-- @keyup="filtrarComing()" -->
-                    </div>
-                </fieldset>
-            <!-- </form> -->
-            <div class="conteiner_main d-flex justify-content-between gap-4 flex-wrap g-col-4">
-                <div class="card border-white g-col-3 card_conteiner p-2 text-bg-dark" v-for="evento in eventosFiltradosComing">
-                    <img class="card-img-top" :src="evento.image" :alt="evento.name">
-                    <div class="card-body d-flex flex-column justify-content-between">
-                        <h4 class="card-title">{{evento.name}}</h4>
-                        <p class="card-text">{{evento.desc}}</p>
-                        <h4>${{evento.price}}</h4>
-                        <a :href="'./details.html?id='+evento._id" class="btn btn-primary">More info...</a>
-                    </div>
+        <div id="app" class="d-flex justify-content-center align-item-center my-5">
+            
+            <div class="card_details text-bg-dark d-flex p-4 justify-content-around">
+                <img :src="eventoDetails.image" class="card_img_top" :alt="eventoDetails.name">
+                <div class="card_conteiner flex-column align-item-center justify-content-between mt-4 gap-3">
+                    <div class="card_body">
+                        <h5 class="card-title fw-bolder text-center">{{eventoDetails.name}}</h5>
+                      </div>
+                      <ul class="d-flex flex-column align-item-center justify-content-between mt-4 gap-3">
+                        <li><span class="fw-bold">Description: </span> {{eventoDetails.description}}</li>
+                        <li><span class="fw-bold">Price: </span>${{eventoDetails.price}}</li>
+                        <li><span class="fw-bold">Category: </span>{{eventoDetails.category}}</li>
+                        <li v-if="eventoDetails.estimate"><span class="fw-bold">Assistance estimate: </span>{{eventoDetails.estimate}}</li>
+                        <li v-if="eventoDetails.assistance"><span class="fw-bold">Assistance: </span>{{eventoDetails.assistance}}</li>
+                        <li><span class="fw-bold">Capacity: </span>{{eventoDetails.capacity}}</li>
+                        <li><span class="fw-bold">Date: </span>{{eventoDetails.date}}</li>
+                      </ul>
                 </div>
-            </div>
-        </div>
-           
-        
+              </div>
+
+        </div>        
     </main>
     <footer>
         <footer>

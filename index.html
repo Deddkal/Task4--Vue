@@ -60,11 +60,11 @@
             <div class="conteiner_main d-flex justify-content-between gap-4 flex-wrap g-col-4">
                 <div class="card border-white g-col-3 card_conteiner p-2 text-bg-dark" v-for="evento in eventosFiltrados">
                     <img class="card-img-top" :src="evento.image" :alt="evento.name">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column justify-content-between">
                         <h4 class="card-title">{{evento.name}}</h4>
                         <p class="card-text">{{evento.desc}}</p>
                         <h4>${{evento.price}}</h4>
-                        <a href="./details.html?id={{info._id}}" class="btn btn-primary">More info...</a>
+                        <a :href="'./details.html?id='+evento._id" class="btn btn-primary">More info...</a>
                     </div>
                 </div>
             </div>

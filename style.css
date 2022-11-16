@@ -47,3 +47,35 @@ footer img{
 .card_conteiner{
     width: 18rem;
 }
+
+.conteiner_contact{
+    width: 80%;
+    border-radius: 50px;
+    margin: 3rem 0;
+    font-size: 24px;
+}
+
+.conteiner_table{
+    width: 80%;
+}
+
+.card_details{
+    width: 80%;
+    border-radius: 40px;
+}
+
+.card_details img{
+    object-fit: cover;
+    width: 60%;
+    border-radius: 30px;
+}
+
+@media only screen and (max-width: 780px){
+    .card_details{
+        flex-wrap: wrap;
+    }
+
+    .card_details img{
+        width: 100%;
+    }
+}
